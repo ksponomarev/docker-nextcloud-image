@@ -9,9 +9,8 @@ COPY data/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY data/*.sh /
 
 RUN set -x && apt install -y --auto-remove supervisor \
-    && chmod 755 /start.sh \
-    && chmod 755 /entrypoint.sh \
-    && mkdir /run/php && chown -R 33:33 /run/php\
+    && chmod 755 /*.sh \
+    && mkdir /var/run/php && chown -R 82:82 /var/run/php \
     && apt-get autoremove -y\
     && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archives/*
 
