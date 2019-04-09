@@ -58,7 +58,7 @@ server
                 opcache.memory_consumption=128
                 opcache.save_comments=1
                 opcache.revalidate_freq=1";
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
         fastcgi_intercept_errors on;
     }
 
